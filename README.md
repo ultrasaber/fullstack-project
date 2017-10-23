@@ -12,7 +12,7 @@ Macrohard is looking to potential web developers to create this website, dubbed 
 ## Database Structure Description
 erd.xml is a Draw.io XML file that contains the entity-relationship diagram for this project.
 
-#### Genre
+### Genre
 Represents a Genre associated with a Song. Intended to fill the category requirements for this project.
 
 Columns:
@@ -22,7 +22,7 @@ Columns:
 Associations:
 - A Genre has many Songs.
 
-#### Song
+### Song
 Represents an individual Song. This is the primary product served by the Site.
 
 Columns:
@@ -39,7 +39,7 @@ Columns:
 Associations:
 - A Song has one Genre.
 
-#### Order
+### Order
 Represents an Order that a customer places for one or more Songs.
 
 Columns:
@@ -54,7 +54,7 @@ Associations:
 - An Order is associated with one User.
 - An Order has one or many LineItems.
 
-#### LineItem
+### LineItem
 Represents a single item within an Order.
 
 Columns:
@@ -66,7 +66,7 @@ Columns:
 Associations:
 - A LineItem belongs to one Order.
 
-#### User
+### User
 Represents an end user for this service.
 
 Columns:
@@ -84,7 +84,7 @@ Associations:
 - A User has many Orders.
 - A User belongs to one Province.
 
-#### Province
+### Province
 Represents a province, with tax information.
 
 Columns:
