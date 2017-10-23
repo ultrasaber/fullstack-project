@@ -40,16 +40,61 @@ Associations:
 - A Song has one Genre.
 
 #### Order
-Represents an Order that a customer places.
+Represents an Order that a customer places for one or more Songs.
+
+Columns:
+- OrderID:Integer
+- UserID:Integer
+- PSTRate:Integer
+- GSTRate:Integer
+- HSTRate:Integer
+- Status:String
+
+Associations:
+- An Order is associated with one User.
+- An Order has one or many LineItems.
 
 #### LineItem
 Represents a single item within an Order.
 
+Columns:
+- LineItemID:Integer
+- OrderID:Integer
+- SongID:Integer
+- Price:Integer
+
+Associations:
+- A LineItem belongs to one Order.
+
 #### User
 Represents an end user for this service.
 
+Columns:
+- UserID:Integer
+- ProvinceID:Integer
+- Username:String
+- Password:String
+- FirstName:String
+- LastName:String
+- Address:String
+- City:String
+- IsAdmin:Boolean
+
+Associations:
+- A User has many Orders.
+- A User belongs to one Province.
+
 #### Province
 Represents a province, with tax information.
+
+Columns:
+- ProvinceID:Integer
+- PSTRate:Integer
+- GSTRate:Integer
+- HSTRate:Integer
+
+Associations:
+- A Province has many Users.
 
 ## Strengths and Weaknesses
 
