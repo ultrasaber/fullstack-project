@@ -12,6 +12,45 @@ Macrohard is looking to potential web developers to create this website, dubbed 
 ## Database Structure Description
 erd.xml is a Draw.io XML file that contains the entity-relationship diagram for this project.
 
+#### Genre
+Represents a Genre associated with a Song. Intended to fill the category requirements for this project.
+
+Columns:
+- GenreID:Integer
+- Name:String
+
+Associations:
+- A Genre has many Songs.
+
+#### Song
+Represents an individual Song. This is the primary product served by the Site.
+
+Columns:
+- SongID:Integer
+- GenreID:Integer
+- Title:String
+- Artist:String
+- Image:String
+- Price:Integer
+- PreviewLink:String
+- CreatedAt:Date
+- OnSale:Boolean
+
+Associations:
+- A Song has one Genre.
+
+#### Order
+Represents an Order that a customer places.
+
+#### LineItem
+Represents a single item within an Order.
+
+#### User
+Represents an end user for this service.
+
+#### Province
+Represents a province, with tax information.
+
 ## Strengths and Weaknesses
 
 Strengths:
