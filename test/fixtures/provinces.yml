@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pst_rate: 1
+  gst_rate: 1
+  hst_rate: 1
+
+two:
+  pst_rate: 1
+  gst_rate: 1
+  hst_rate: 1
