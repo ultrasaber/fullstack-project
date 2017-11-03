@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103152607) do
+ActiveRecord::Schema.define(version: 20171103161056) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20171103152607) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20171103152607) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "provinces", force: :cascade do |t|
@@ -51,6 +53,7 @@ ActiveRecord::Schema.define(version: 20171103152607) do
     t.boolean "on_sale"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "genre_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,6 +66,7 @@ ActiveRecord::Schema.define(version: 20171103152607) do
     t.string "address"
     t.string "city"
     t.boolean "is_admin"
+    t.integer "province_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
