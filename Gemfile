@@ -57,3 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Monban authentication library + generators.
 gem "monban-generators"
+
+# Admin dash
+gem "administrate"
