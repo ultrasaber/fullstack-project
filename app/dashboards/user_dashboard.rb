@@ -9,7 +9,6 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     orders: Field::HasMany,
-    province: Field::BelongsTo,
     id: Field::Number,
     email: Field::String,
     password_digest: Field::String,
@@ -20,6 +19,7 @@ class UserDashboard < Administrate::BaseDashboard
     address: Field::String,
     city: Field::String,
     is_admin: Field::Boolean,
+    province_id: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -29,16 +29,15 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :orders,
-    :province,
     :id,
     :email,
+    :password_digest,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :orders,
-    :province,
     :id,
     :email,
     :password_digest,
@@ -49,6 +48,7 @@ class UserDashboard < Administrate::BaseDashboard
     :address,
     :city,
     :is_admin,
+    :province_id,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -56,7 +56,6 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :orders,
-    :province,
     :email,
     :password_digest,
     :first_name,
@@ -64,6 +63,7 @@ class UserDashboard < Administrate::BaseDashboard
     :address,
     :city,
     :is_admin,
+    :province_id,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
