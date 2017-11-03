@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
-  validates :firstname, presence: true
-  validates :lastname, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   validates :address, presence: true
   validates :city, presence: true
-  validates :isadmin, presence: true
+  validates :is_admin, presence: true
 end
