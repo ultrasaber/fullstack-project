@@ -3,4 +3,7 @@ class Order < ApplicationRecord
   validates :gst_rate, presence: true
   validates :hst_rate, presence: true
   validates :status, presence: true
+
+  belongs_to :user
+  has_many :line_items
 end

@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   validates :address, presence: true
   validates :city, presence: true
   validates :is_admin, presence: true
+
+  has_many :orders
+  belongs_to :province
 end
