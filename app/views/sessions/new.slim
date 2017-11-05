@@ -1,0 +1,10 @@
+h2 Log in to Vivace
+= form_for :session, url: session_path do |form|
+  #email
+    = form.label :email
+    = form.email_field :email
+  #password
+    = form.label :password
+    = form.password_field :password
+  #submit
+    = form.submit "Sign in"

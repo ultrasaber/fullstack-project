@@ -55,10 +55,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ================ ADDITIONAL GEMS ===================
 
-gem "rubocop"
+gem 'rubocop'
 
 # Monban authentication library + generators.
-gem "monban-generators"
+gem 'monban-generators'
 
 # Admin dash
-gem "administrate"
+gem 'administrate'
+
+# Slim preprocessor.
+gem 'slim'

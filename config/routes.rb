@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   root to: "songs#index"
+  get 'session/destroy', to: 'sessions#destroy'
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]

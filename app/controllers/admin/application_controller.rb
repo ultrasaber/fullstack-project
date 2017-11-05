@@ -12,7 +12,12 @@ module Admin
 
     def authenticate_admin
       # TODO Add authentication logic here.
-      redirect_to new_session_path unless current_user.is_admin
+
+      if current_user != nil
+        redirect_to root_path unless current_user.is_admin
+      else
+        redirect_to new_session_path
+      end
     end
 
     # Override this value to specify the number of elements to display at a time

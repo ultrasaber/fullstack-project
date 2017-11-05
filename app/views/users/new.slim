@@ -1,0 +1,16 @@
+h2 Sign up for Vivace
+= form_for @user do |form|
+  - if @user.errors.any?
+    p The following error(s) occurred:
+    ul
+      - @user.errors.full_messages.each do |error_message|
+        li #{error_message}
+
+  #email
+    = form.label :email
+    = form.email_field :email, require: true
+  #password
+    = form.label :password
+    = form.password_field :password, require: true
+  #submit
+    = form.submit "Sign up"

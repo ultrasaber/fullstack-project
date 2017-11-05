@@ -1,0 +1,24 @@
+#header
+  h1 Vivace
+  p by Macrohard
+
+#userinfo
+  - if current_user != nil
+    p Signed in as #{current_user.email}
+    p
+      a href='/session/destroy' Sign out
+    - if current_user.is_admin
+      p
+        a href='/admin' Admin dashboard
+  - else
+    p 
+      a href='/session/new' Log in
+    p
+      a href='/users/new' Sign up
+
+#products
+  - @songs.each do |s|
+    .song
+      p 
+        a href='songs/#{s.id}' #{s.artist} - #{s.title}
+      p #{format('$%.2f', s.price / 100.0)} CAD
