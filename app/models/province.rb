@@ -5,5 +5,5 @@ class Province < ApplicationRecord
   validates :gst_rate, presence: true
   validates :hst_rate, presence: true
 
-  has_many :users
+  has_many :addresses
 end

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ProvinceDashboard < Administrate::BaseDashboard
+class AddressDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,15 +8,16 @@ class ProvinceDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    addresses: Field::HasMany,
+    province: Field::BelongsTo,
+    user: Field::BelongsTo,
+    orders: Field::HasMany,
     id: Field::Number,
-    pst_rate: Field::Number,
-    gst_rate: Field::Number,
-    hst_rate: Field::Number,
+    first_name: Field::String,
+    last_name: Field::String,
+    address: Field::String,
+    city: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    name: Field::String,
-    code: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,42 +26,44 @@ class ProvinceDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :addresses,
+    :province,
+    :user,
+    :orders,
     :id,
-    :pst_rate,
-    :gst_rate,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :addresses,
+    :province,
+    :user,
+    :orders,
     :id,
-    :pst_rate,
-    :gst_rate,
-    :hst_rate,
+    :first_name,
+    :last_name,
+    :address,
+    :city,
     :created_at,
     :updated_at,
-    :name,
-    :code,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :addresses,
-    :pst_rate,
-    :gst_rate,
-    :hst_rate,
-    :name,
-    :code,
+    :province,
+    :user,
+    :orders,
+    :first_name,
+    :last_name,
+    :address,
+    :city,
   ].freeze
 
-  # Overwrite this method to customize how provinces are displayed
+  # Overwrite this method to customize how addresses are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(province)
-  #   "Province ##{province.id}"
+  # def display_resource(address)
+  #   "Address ##{address.id}"
   # end
 end

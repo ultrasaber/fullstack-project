@@ -4,6 +4,6 @@ class Order < ApplicationRecord
   validates :hst_rate, presence: true
   validates :status, presence: true
 
-  belongs_to :user
+  belongs_to :address
   has_many :line_items
 end

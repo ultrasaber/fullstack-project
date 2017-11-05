@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :provinces
     resources :songs
+    resources :addresses
 
     root to: "users#index"
   end

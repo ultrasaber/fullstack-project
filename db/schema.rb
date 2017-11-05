@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103161056) do
+ActiveRecord::Schema.define(version: 20171103201633) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "city"
+    t.integer "province_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -32,7 +43,7 @@ ActiveRecord::Schema.define(version: 20171103161056) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "address_id"
   end
 
   create_table "provinces", force: :cascade do |t|
@@ -61,12 +72,7 @@ ActiveRecord::Schema.define(version: 20171103161056) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "address"
-    t.string "city"
     t.boolean "is_admin"
-    t.integer "province_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
