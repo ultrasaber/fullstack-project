@@ -6,10 +6,13 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
+    include Monban::ControllerHelpers
+
     before_action :authenticate_admin
 
     def authenticate_admin
       # TODO Add authentication logic here.
+      redirect_to new_session_path unless current_user.is_admin
     end
 
     # Override this value to specify the number of elements to display at a time
