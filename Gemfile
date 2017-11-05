@@ -55,6 +55,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ================ ADDITIONAL GEMS ===================
 
+gem "rubocop"
+
 # Monban authentication library + generators.
 gem "monban-generators"
 

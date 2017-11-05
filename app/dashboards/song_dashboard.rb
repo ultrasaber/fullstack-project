@@ -17,6 +17,7 @@ class SongDashboard < Administrate::BaseDashboard
     on_sale: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    description: Field::Text,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -43,6 +44,7 @@ class SongDashboard < Administrate::BaseDashboard
     :on_sale,
     :created_at,
     :updated_at,
+    :description,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -55,6 +57,7 @@ class SongDashboard < Administrate::BaseDashboard
     :price,
     :preview_link,
     :on_sale,
+    :description,
   ].freeze
 
   # Overwrite this method to customize how songs are displayed
