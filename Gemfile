@@ -65,3 +65,6 @@ gem 'administrate'
 
 # Slim preprocessor.
 gem 'slim'
+
+# File attachment gem.
+gem "paperclip", "~> 5.0.0"
