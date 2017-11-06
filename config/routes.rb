@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   root to: "songs#index"
   get 'session/destroy', to: 'sessions#destroy'
+  get 'songs/:id', to: 'songs#show', id: /\d+/
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]

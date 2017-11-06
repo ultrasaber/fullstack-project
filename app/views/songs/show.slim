@@ -1,0 +1,9 @@
+p
+  a href="/" Go back
+
+#song
+  h3 #{@song.artist} - #{@song.title}
+  p #{@song.description}
+  p
+    a href='#' Buy for #{format('$%.2f', @song.price / 100.0)} CAD
+  iframe width='560' height='315' src='#{@song.preview_link}'
