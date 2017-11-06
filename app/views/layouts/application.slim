@@ -9,7 +9,8 @@ html
 
   body
     #header
-      h1 Vivace
+      h1 
+        = link_to 'Vivace', root_path
       p by Macrohard
 
 
@@ -26,5 +27,11 @@ html
         a href='/session/new' Log in
       p
         a href='/users/new' Sign up
+
+    #nav
+      = form_tag("/search", method: "get") do
+        = label_tag(:q, "Search for:")
+        = text_field_tag(:q)
+        = submit_tag("Search")
 
     = yield

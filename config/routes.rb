@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'session/destroy', to: 'sessions#destroy'
   get 'songs/:id', to: 'songs#show', id: /\d+/
 
+  get 'search/:query', to: 'search#search'
+  get 'search', to: 'search#search', as: 'search'
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
