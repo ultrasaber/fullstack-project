@@ -5,8 +5,4 @@ p
 
 #products
   -if @songs != nil
-    - @songs.each do |s|
-      .song
-        p 
-          a href='songs/#{s.id}' #{s.artist} - #{s.title}
-        p #{format('$%.2f', s.price / 100.0)} CAD
+    = render partial: 'common/search_result', collection: @songs
