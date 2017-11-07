@@ -60,7 +60,7 @@ class ProvinceDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how provinces are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(province)
-  #   "Province ##{province.id}"
-  # end
+  def display_resource(province)
+    "##{province.id} - #{province.name}"
+  end
 end

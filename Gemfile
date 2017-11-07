@@ -63,7 +63,7 @@ gem 'monban-generators'
 # Admin dash
 gem 'administrate'
 
-# Slim preprocessor.
+# Slim template preprocessor.
 gem 'slim'
 
 # File attachment gem.

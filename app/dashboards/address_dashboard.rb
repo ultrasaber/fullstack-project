@@ -63,7 +63,7 @@ class AddressDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how addresses are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(address)
-  #   "Address ##{address.id}"
-  # end
+  def display_resource(address)
+    "##{address.id} - #{address.first_name} #{address.last_name}"
+  end
 end
