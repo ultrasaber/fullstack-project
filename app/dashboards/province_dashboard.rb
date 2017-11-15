@@ -25,10 +25,12 @@ class ProvinceDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :addresses,
     :id,
+    :name,
+    :code,
     :pst_rate,
     :gst_rate,
+    :hst_rate
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
