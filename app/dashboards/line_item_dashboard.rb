@@ -9,6 +9,7 @@ class LineItemDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     order: Field::BelongsTo,
+    song: Field::BelongsTo,
     id: Field::Number,
     price: Field::Number,
     created_at: Field::DateTime,
@@ -22,15 +23,16 @@ class LineItemDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :order,
+    :song,
     :id,
     :price,
-    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :order,
+    :song,
     :id,
     :price,
     :created_at,
@@ -42,6 +44,7 @@ class LineItemDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :order,
+    :song,
     :price,
   ].freeze
 
