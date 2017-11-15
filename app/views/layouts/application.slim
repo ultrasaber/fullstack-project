@@ -23,6 +23,8 @@ html
         - if current_user != nil
           p Signed in as #{current_user.email}
           p
+            = link_to 'User Settings', user_settings_path 
+          p
             a href='/session/destroy' Sign out
           - if current_user.is_admin
             p
