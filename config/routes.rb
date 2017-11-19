@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   get 'search', to: 'search#search', as: 'search'
 
   get 'usersettings', to: 'user_settings#index', as: 'user_settings'
+  get 'usersettings/addresses/new', to: 'addresses#new', as: 'new_user_address'
+  post 'usersettings/addresses/create', to: 'addresses#create', as: 'create_user_address'
+  get 'usersettings/addresses/edit/:id', to: 'addresses#edit', as: 'edit_user_address'
+  post 'usersettings/addresses/update/:id', to: 'addresses#update', as: 'update_user_address'
+  get 'usersettings/addresses/delete/:id', to: 'addresses#delete', as: 'delete_user_address'
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]

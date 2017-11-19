@@ -1,0 +1,20 @@
+h2 Add an address
+= link_to 'Go back', user_settings_path
+= form_for :address, url: create_user_address_path do |form|
+  #first_name
+    = form.label :first_name
+    = form.text_field :first_name
+  #last_name
+    = form.label :last_name
+    = form.text_field :last_name
+  #address
+    = form.label :address
+    = form.text_field :address
+  #city
+    = form.label :city
+    = form.text_field :city
+  #province
+    = form.label :province
+    = form.select :province_id, Province.all.collect { |p| [ p.name, p.id ] }
+  #submit
+    = form.submit "Add address"
