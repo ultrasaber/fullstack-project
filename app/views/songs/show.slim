@@ -3,6 +3,14 @@ p
 
 article id='song'
   h3 #{@song.artist} - #{@song.title}
+
+  = image_tag @song.album_cover.url(:medium)
+  
+  - if current_user != nil
+    - if current_user.is_admin
+      p
+        = link_to 'Edit album cover for this song', edit_album_cover_path(@song.id)
+
   p #{@song.description}
   p #{format('$%.2f', @song.price / 100.0)} CAD
   p

@@ -1,0 +1,14 @@
+p
+  = link_to 'Go back', show_song_path(@song.id)
+
+h3 Edit album cover for #{@song.artist} - #{@song.title}
+
+= image_tag @song.album_cover.url
+
+= form_for :song, url: update_album_cover_path(@song.id) do |form|
+  #album_cover
+    = form.label :album_cover
+    = form.file_field :album_cover
+  #submit
+    = form.submit "Update album cover"
+    = link_to 'Delete album cover', delete_album_cover_path

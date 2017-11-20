@@ -1,0 +1,2 @@
+module AlbumCoverHelper
+end

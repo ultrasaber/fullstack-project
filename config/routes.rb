@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 
   root to: "songs#index"
   get 'session/destroy', to: 'sessions#destroy'
-  get 'songs/:id', to: 'songs#show', id: /\d+/
+  get 'songs/:id', to: 'songs#show', id: /\d+/, as: 'show_song'
+
+  get 'songs/albumcover/:id', to: 'album_cover#show', as: 'edit_album_cover'
+  post 'songs/albumcover/update/:id', to: 'album_cover#update', as: 'update_album_cover'
+  get 'songs/albumcover/delete/:id', to: 'album_cover#delete', as: 'delete_album_cover'
 
   get 'search/:query', to: 'search#search'
   get 'search', to: 'search#search', as: 'search'
