@@ -1,0 +1,8 @@
+h2 New additions
+
+p
+  = link_to 'Go back', root_path
+
+#products
+  -if @songs != nil
+    = render partial: 'common/search_result', collection: @songs

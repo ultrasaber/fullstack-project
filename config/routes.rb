@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get 'songs/albumcover/delete/:id', to: 'album_cover#delete', as: 'delete_album_cover'
   get 'songs/genre/:id', to: 'genre#songs', as: 'show_songs_by_genre'
 
+  get 'songs/new', to: 'songs#by_new', as: 'show_new_songs'
+  get 'songs/sale', to: 'songs#by_on_sale', as: 'show_songs_on_sale'
+
   get 'search/:query', to: 'search#search'
   get 'search', to: 'search#search', as: 'search'
 

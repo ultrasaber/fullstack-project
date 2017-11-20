@@ -37,6 +37,10 @@ html
 
       #genres
         ul
+          li
+            = link_to 'New additions', show_new_songs_path
+          li
+            = link_to 'On sale', show_songs_on_sale_path
           - Genre.all.each do |genre|
             li
               = link_to genre.name, show_songs_by_genre_path(genre.id)
