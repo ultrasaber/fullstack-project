@@ -45,8 +45,4 @@ class AddressesController < ApplicationController
 
     redirect_to user_settings_path
   end
-
-  def confirm_address_ownership(address_user_id)
-    head 403 unless current_user.id == address_user_id
-  end
 end

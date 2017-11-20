@@ -19,4 +19,27 @@ class CartController < ApplicationController
   def index
     @songs = Song.find(session[:shopping_cart]) unless session[:shopping_cart] == nil
   end
+
+  def checkout
+    # TODO: Insert data into orders and line items table
+  end
+
+  def invoice
+    @address = Address.where(:id => params[:address]).first
+    confirm_address_ownership(@address.user.id)
+
+    @songs = Song.find(session[:shopping_cart]) unless session[:shopping_cart] == nil
+    redirect_to show_cart_path if @songs.count == 0
+
+    @subtotal = 0
+
+    @songs.each do |song|
+      @subtotal += song.price
+    end
+
+    @gst = (@subtotal * (@address.province.gst_rate / 100.0)).round.to_i
+    @pst = (@subtotal * (@address.province.pst_rate / 100.0)).round.to_i
+    @hst = (@subtotal * (@address.province.hst_rate / 100.0)).round.to_i
+    @grand_total = @subtotal + @gst + @pst + @hst
+  end
 end

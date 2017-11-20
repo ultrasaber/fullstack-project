@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   get 'cart/remove/:id', id: /\d+/, to: 'cart#remove_from_cart', as: 'remove_song_from_cart'
   get 'cart', to: 'cart#index', as: 'show_cart'
 
+  post 'checkout', to: 'cart#invoice', as: 'show_invoice'
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

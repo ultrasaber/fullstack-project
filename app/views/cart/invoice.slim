@@ -1,0 +1,37 @@
+h2 Checkout
+p Your invoice is below. Please confirm the order details before continuing.
+
+p #{@address.first_name} #{@address.last_name}
+p #{@address.address}
+p #{@address.city}, #{@address.province.name}
+
+table
+  thead
+    tr
+      th Song
+      th Price
+  tbody
+    - @songs.each do |song|
+      tr
+        td #{song.artist} - #{song.title}
+        td #{currency_format(song.price)}
+
+table
+  tbody
+    tr
+      th Subtotal
+      td #{currency_format(@subtotal)}
+    tr
+      th GST (#{percent_format(@address.province.gst_rate)})
+      td #{currency_format(@gst)}
+    tr
+      th PST (#{percent_format(@address.province.pst_rate)})
+      td #{currency_format(@pst)}
+    tr
+      th HST (#{percent_format(@address.province.hst_rate)})
+      td #{currency_format(@hst)}
+    tr
+      th Grand Total
+      td #{currency_format(@grand_total)}
+
+= link_to 'Continue and Place Order' 
