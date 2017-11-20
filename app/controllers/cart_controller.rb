@@ -17,6 +17,6 @@ class CartController < ApplicationController
   end
 
   def index
-    @songs = Song.find(session[:shopping_cart])
+    @songs = Song.find(session[:shopping_cart]) unless session[:shopping_cart] == nil
   end
 end

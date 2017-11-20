@@ -1,8 +1,6 @@
 h2 User settings
 h3 Addresses
 
-p #{current_user.id}
-
 = link_to 'Add address', new_user_address_path
 - @addresses.each do |address|
   p #{address.first_name} #{address.last_name}
