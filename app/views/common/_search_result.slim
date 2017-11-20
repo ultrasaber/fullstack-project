@@ -1,4 +1,4 @@
 article class='song'
   h4 
-    a href='songs/#{search_result.id}' #{search_result.artist} - #{search_result.title}
+    = link_to "#{search_result.artist} - #{search_result.title}", show_song_path(search_result.id)
   p #{format('$%.2f', search_result.price / 100.0)} CAD

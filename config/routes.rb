@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'songs/albumcover/:id', to: 'album_cover#show', as: 'edit_album_cover'
   post 'songs/albumcover/update/:id', to: 'album_cover#update', as: 'update_album_cover'
   get 'songs/albumcover/delete/:id', to: 'album_cover#delete', as: 'delete_album_cover'
+  get 'songs/genre/:id', to: 'genre#songs', as: 'show_songs_by_genre'
 
   get 'search/:query', to: 'search#search'
   get 'search', to: 'search#search', as: 'search'

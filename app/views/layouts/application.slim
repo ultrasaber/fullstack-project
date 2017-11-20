@@ -35,5 +35,11 @@ html
           p
             a href='/users/new' Sign up
 
+      #genres
+        ul
+          - Genre.all.each do |genre|
+            li
+              = link_to genre.name, show_songs_by_genre_path(genre.id)
+
     main
       = yield
