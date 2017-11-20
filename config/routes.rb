@@ -33,6 +33,10 @@ Rails.application.routes.draw do
   post 'usersettings/addresses/update/:id', to: 'addresses#update', as: 'update_user_address'
   get 'usersettings/addresses/delete/:id', to: 'addresses#delete', as: 'delete_user_address'
 
+  get 'cart/add/:id', id: /\d+/, to: 'cart#add_to_cart', as: 'add_song_to_cart'
+  get 'cart/remove/:id', id: /\d+/, to: 'cart#remove_from_cart', as: 'remove_song_from_cart'
+  get 'cart', to: 'cart#index', as: 'show_cart'
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

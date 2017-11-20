@@ -1,0 +1,10 @@
+h2 Your Cart
+ul
+  - @songs.each do |song|
+    li
+      p #{song.artist} - #{song.title}
+      p #{format('$%.2f', song.price / 100.0)} CAD
+      p
+        = link_to 'Remove', remove_song_from_cart_path(song.id)
+
+p Checkout

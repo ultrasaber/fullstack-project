@@ -14,5 +14,5 @@ article id='song'
   p #{@song.description}
   p #{format('$%.2f', @song.price / 100.0)} CAD
   p
-    a href='#' Add to Cart
+    = link_to 'Add to Cart', add_song_to_cart_path(@song.id)
   iframe width='560' height='315' src='#{@song.preview_link}'
