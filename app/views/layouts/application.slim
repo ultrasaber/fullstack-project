@@ -17,6 +17,7 @@ html
       = form_tag("/search", method: "get") do
         = label_tag(:q, "Search songs: ")
         = text_field_tag(:q)
+        = select_tag('genre', options_from_collection_for_select(Genre.all, 'id', 'name'), :include_blank => true)
         = submit_tag("Search")
 
       #userinfo
