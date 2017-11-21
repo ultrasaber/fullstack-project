@@ -1,4 +1,4 @@
-h2 Checkout completed.
+h2 Order placed.
 p Your order has been placed. Your reference number is ##{@new_order.id}
 
 p #{@new_order.address.first_name} #{@new_order.address.last_name}
@@ -34,4 +34,4 @@ table
       th Grand Total
       td #{currency_format(@new_order.grand_total)}
 
-= link_to 'Back to index', root_path 
+= link_to 'Pay now', new_charge_path(@new_order.id)

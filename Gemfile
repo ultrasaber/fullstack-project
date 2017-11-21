@@ -68,3 +68,6 @@ gem 'slim'
 
 # File attachment gem.
 gem "paperclip", "~> 5.0.0"
+
+# Payment processing
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

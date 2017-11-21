@@ -44,6 +44,10 @@ Rails.application.routes.draw do
   get 'order_manager/paid/:id', to: 'orders#set_paid', as: 'order_set_paid'
   get 'order_manager/shipped/:id', to: 'orders#set_shipped', as: 'order_set_shipped'
 
+  #resources :charges
+  get 'charges/new/:id', to: 'charges#new', as: 'new_charge'
+  post 'charges/create/:id', to: 'charges#create', as: 'charges'
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
