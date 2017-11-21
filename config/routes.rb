@@ -40,7 +40,9 @@ Rails.application.routes.draw do
   post 'checkout', to: 'cart#invoice', as: 'show_invoice'
   get 'checkout/completed/:address', to: 'cart#checkout', as: 'place_order'
 
-  get 'ordermanager', to: 'users#with_orders', as: 'order_manager'
+  get 'order_manager', to: 'users#with_orders', as: 'order_manager'
+  get 'order_manager/paid/:id', to: 'orders#set_paid', as: 'order_set_paid'
+  get 'order_manager/shipped/:id', to: 'orders#set_shipped', as: 'order_set_shipped'
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]

@@ -12,6 +12,7 @@ table
       th Order Status
       th Order Total
       th Order Items
+      th Options
   tbody
     - @users.each do |user|
       tr
@@ -29,4 +30,7 @@ table
             ul
               - order.line_items.each do |item|
                 li #{item.song.artist} - #{item.song.title}
+          td
+            = link_to 'PAID', order_set_paid_path(order.id)
+            = link_to 'SHIPPED', order_set_shipped_path(order.id)
 
