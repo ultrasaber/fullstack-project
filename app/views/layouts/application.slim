@@ -32,6 +32,8 @@ html
           - if current_user.is_admin
             p
               a href='/admin' Admin dashboard
+            p
+              = link_to 'Order manager', order_manager_path
         - else
           p 
             a href='/session/new' Log in

@@ -1,0 +1,32 @@
+h2 Order Manager
+
+p Displayed are all users with orders. Click on a user/order to be taken to the admin dashboard.
+
+table
+  thead
+    tr
+      th User ID
+      th Email
+      th Order Number
+      th Order Address
+      th Order Status
+      th Order Total
+      th Order Items
+  tbody
+    - @users.each do |user|
+      tr
+        td rowspan="#{user.orders.count + 1}" #{user.id}
+        td rowspan="#{user.orders.count + 1}"
+          = link_to "#{user.email}", admin_user_path(user.id)
+      - user.orders.each do |order|
+        tr
+          td 
+            = link_to "#{order.id}", admin_order_path(order.id)
+          td #{order.address.display_format}
+          td #{order.status}
+          td #{currency_format(order.grand_total)}
+          td
+            ul
+              - order.line_items.each do |item|
+                li #{item.song.artist} - #{item.song.title}
+

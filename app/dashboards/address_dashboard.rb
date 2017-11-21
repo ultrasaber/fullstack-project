@@ -65,6 +65,6 @@ class AddressDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(address)
-    "##{address.id} - #{address.first_name} #{address.last_name}"
+    "##{address.id} - #{address.display_format}"
   end
 end

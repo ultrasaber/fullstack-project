@@ -5,6 +5,18 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def with_orders
+    confirm_admin
+
+    user_ids = []
+
+    Order.all.each do |order|
+      user_ids << order.address.user.id
+    end
+
+    @users = User.find(user_ids)
+  end
+
   def create
     @user = sign_up(user_params)
 
