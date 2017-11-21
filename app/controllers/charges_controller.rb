@@ -7,7 +7,7 @@ class ChargesController < ApplicationController
     @order = Order.find(params[:id])
 
     # Amount in cents
-    @amount = @order.grand_total # TODO: change this to order grand total
+    @amount = @order.grand_total
   
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -22,6 +22,7 @@ class ChargesController < ApplicationController
     )
     
     @order.status = 'PAID'
+    @order.stripe_payment_id = charge.id
     @order.save
   rescue Stripe::CardError => e
     flash[:error] = e.message

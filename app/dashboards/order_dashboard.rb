@@ -17,7 +17,8 @@ class OrderDashboard < Administrate::BaseDashboard
     status: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    grand_total: Field::Number
+    grand_total: Field::Number,
+    stripe_payment_id: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,7 +31,8 @@ class OrderDashboard < Administrate::BaseDashboard
     :address,
     :line_items,
     :grand_total,
-    :status
+    :status,
+    :stripe_payment_id
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -45,6 +47,7 @@ class OrderDashboard < Administrate::BaseDashboard
     :status,
     :created_at,
     :updated_at,
+    :stripe_payment_id
   ].freeze
 
   # FORM_ATTRIBUTES
