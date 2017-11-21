@@ -18,6 +18,7 @@ class AddressDashboard < Administrate::BaseDashboard
     city: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    display_format: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,10 +27,10 @@ class AddressDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :province,
+    :id,
+    :display_format,
     :user,
     :orders,
-    :id,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

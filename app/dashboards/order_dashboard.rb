@@ -17,6 +17,7 @@ class OrderDashboard < Administrate::BaseDashboard
     status: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    grand_total: Field::Number
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,10 +26,11 @@ class OrderDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :id,
     :address,
     :line_items,
-    :id,
-    :pst_rate,
+    :grand_total,
+    :status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

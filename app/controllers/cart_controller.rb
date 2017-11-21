@@ -21,8 +21,6 @@ class CartController < ApplicationController
   end
 
   def checkout
-    # TODO: Insert data into orders and line items table
-
     address = Address.where(:id => params[:address]).first
     confirm_address_ownership(address.user.id)
 
