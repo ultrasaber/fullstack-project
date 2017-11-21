@@ -1,0 +1,37 @@
+h2 Checkout completed.
+p Your order has been placed. Your reference number is ##{@new_order.id}
+
+p #{@new_order.address.first_name} #{@new_order.address.last_name}
+p #{@new_order.address.address}
+p #{@new_order.address.city}, #{@new_order.address.province.name}
+
+table
+  thead
+    tr
+      th Song
+      th Price
+  tbody
+    - @new_order.line_items.each do |line_item|
+      tr
+        td #{line_item.song.artist} - #{line_item.song.title}
+        td #{currency_format(line_item.price)}
+
+table
+  tbody
+    tr
+      th Subtotal
+      td #{currency_format(@new_order.subtotal)}
+    tr
+      th GST (#{percent_format(@new_order.gst_rate)})
+      td #{currency_format(@new_order.gst)}
+    tr
+      th PST (#{percent_format(@new_order.pst_rate)})
+      td #{currency_format(@new_order.pst)}
+    tr
+      th HST (#{percent_format(@new_order.hst_rate)})
+      td #{currency_format(@new_order.hst)}
+    tr
+      th Grand Total
+      td #{currency_format(@new_order.grand_total)}
+
+= link_to 'Back to index', root_path 

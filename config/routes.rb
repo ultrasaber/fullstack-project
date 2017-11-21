@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get 'cart', to: 'cart#index', as: 'show_cart'
 
   post 'checkout', to: 'cart#invoice', as: 'show_invoice'
+  get 'checkout/completed/:address', to: 'cart#checkout', as: 'place_order'
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]

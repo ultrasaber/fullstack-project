@@ -34,4 +34,4 @@ table
       th Grand Total
       td #{currency_format(@grand_total)}
 
-= link_to 'Continue and Place Order' 
+= link_to 'Continue and Place Order', place_order_path(@address.id)
