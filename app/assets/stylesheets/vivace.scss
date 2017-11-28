@@ -135,10 +135,8 @@ main {
 }
 
 .add-cart-button {
-  display: inline-block;
+  @extend .button-base;
   background-color: #139e31;
-  border-radius: 3px;
-  padding: 6px;
   margin-left: 5px;
   
   a {
@@ -147,11 +145,15 @@ main {
   }
 }
 
-.status-button {
+.button-base {
   display: inline-block;
-  background-color: #0078e7;
   border-radius: 3px;
   padding: 6px;
+}
+
+.status-button {
+  @extend .button-base;
+  background-color: #0078e7;
   margin:2px;
   color: #fff;
   text-decoration: none;
@@ -169,7 +171,7 @@ main {
   }
   
   .right-content {
-    margin-left:20%;
+    margin-left: 1 / 5 * 100%;
   }
 
   .album-cover {

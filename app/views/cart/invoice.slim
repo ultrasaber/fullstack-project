@@ -16,6 +16,8 @@ table class='pure-table pure-table-bordered'
         td #{song.artist} - #{song.title}
         td #{currency_format(song.price)}
 
+br
+
 table class='pure-table pure-table-bordered'
   tbody
     tr
@@ -33,5 +35,7 @@ table class='pure-table pure-table-bordered'
     tr
       th Grand Total
       td #{currency_format(@grand_total)}
+
+br
 
 = link_to 'Place Order', place_order_path(@address.id), class: 'status-button'

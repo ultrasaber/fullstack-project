@@ -16,6 +16,8 @@ table class='pure-table pure-table-bordered'
         td #{line_item.song.artist} - #{line_item.song.title}
         td #{currency_format(line_item.price)}
 
+br
+
 table class='pure-table pure-table-bordered'
   tbody
     tr
@@ -33,5 +35,7 @@ table class='pure-table pure-table-bordered'
     tr
       th Grand Total
       td #{currency_format(@new_order.grand_total)}
+
+br
 
 = link_to 'Pay now', new_charge_path(@new_order.id), class: 'status-button'
