@@ -1,6 +1,6 @@
 h2 Add an address
 = link_to 'Go back', user_settings_path
-= form_for :address, url: create_user_address_path do |form|
+= form_for(:address, url: create_user_address_path, html: { class: 'pure-form pure-form-stacked' }) do |form|
   #first_name
     = form.label :first_name
     = form.text_field :first_name
@@ -17,4 +17,4 @@ h2 Add an address
     = form.label :province
     = form.select :province_id, Province.all.collect { |p| [ p.name, p.id ] }
   #submit
-    = form.submit "Add address"
+    = form.submit "Add address", class: 'pure-button pure-button-primary'

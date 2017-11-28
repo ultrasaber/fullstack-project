@@ -1,12 +1,16 @@
 h2 User settings
 h3 Addresses
 
-= link_to 'Add address', new_user_address_path
-- @addresses.each do |address|
-  p #{address.first_name} #{address.last_name}
-  p #{address.address}
-  p #{address.city}, #{address.province.code}
-  p #{address.user_id}
-  p
-    = link_to 'Edit', edit_user_address_path(address.id)
-    = link_to 'Delete', delete_user_address_path(address.id)
+= link_to 'Add', new_user_address_path, class: 'status-button'
+
+table class="pure-table pure-table-bordered"
+  thead
+    th Address
+    th Options
+  tbody
+    - @addresses.each do |address|
+      tr
+        td #{address.display_format}
+        td
+          = link_to 'Edit', edit_user_address_path(address.id), class: 'status-button'
+          = link_to 'Delete', delete_user_address_path(address.id), class: 'status-button'

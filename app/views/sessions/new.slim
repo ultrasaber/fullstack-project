@@ -1,5 +1,5 @@
 h2 Log in to Vivace
-= form_for :session, url: session_path do |form|
+= form_for(:session, url: session_path, html: { class: 'pure-form pure-form-stacked' }) do |form|
   #email
     = form.label :email
     = form.email_field :email
@@ -7,4 +7,4 @@ h2 Log in to Vivace
     = form.label :password
     = form.password_field :password
   #submit
-    = form.submit "Sign in"
+    = form.submit "Sign in", class: 'pure-button pure-button-primary'

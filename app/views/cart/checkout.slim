@@ -5,7 +5,7 @@ p #{@new_order.address.first_name} #{@new_order.address.last_name}
 p #{@new_order.address.address}
 p #{@new_order.address.city}, #{@new_order.address.province.name}
 
-table
+table class='pure-table pure-table-bordered'
   thead
     tr
       th Song
@@ -16,7 +16,7 @@ table
         td #{line_item.song.artist} - #{line_item.song.title}
         td #{currency_format(line_item.price)}
 
-table
+table class='pure-table pure-table-bordered'
   tbody
     tr
       th Subtotal
@@ -34,4 +34,4 @@ table
       th Grand Total
       td #{currency_format(@new_order.grand_total)}
 
-= link_to 'Pay now', new_charge_path(@new_order.id)
+= link_to 'Pay now', new_charge_path(@new_order.id), class: 'status-button'

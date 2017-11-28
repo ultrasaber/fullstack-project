@@ -1,4 +1,5 @@
 article class='song'
+  = link_to image_tag(search_result.album_cover.url(:medium), class: 'album-cover'), show_song_path(search_result.id)
   h4 
     = link_to "#{search_result.artist} - #{search_result.title}", show_song_path(search_result.id)
   p #{format('$%.2f', search_result.price / 100.0)} CAD

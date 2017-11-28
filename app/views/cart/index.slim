@@ -1,21 +1,28 @@
 h2 Your Cart
 - if @songs != nil
-  ul
-    - @songs.each do |song|
-      li
-        p #{song.artist} - #{song.title}
-        p #{format('$%.2f', song.price / 100.0)} CAD
-        p
-          = link_to 'Remove', remove_song_from_cart_path(song.id)
+  table class='pure-table pure-table-bordered'
+    thead
+      tr
+        th Song
+        th Price
+        th Options
+    tbody
+      - @songs.each do |song|
+        tr
+          td #{song.artist} - #{song.title}
+          td #{format('$%.2f', song.price / 100.0)} CAD
+          td
+            = link_to 'Remove', remove_song_from_cart_path(song.id), class: 'status-button'
   
   - if current_user.addresses.count == 0
     p There are no addresses linked to your account.
     p 
       = link_to 'Add an address now.', new_user_address_path
   - else
-    = form_tag("/checkout", method: "post") do
+    = form_tag("/checkout", method: "post", html: { class: 'pure-form-stacked' }) do
       = label_tag(:address, "Select address: ")
       = select_tag(:address, options_from_collection_for_select(current_user.addresses, 'id', 'display_format'))
-      = submit_tag("Proceed to checkout")
+      br
+      = submit_tag("Proceed to checkout", class: 'pure-button pure-button-primary')
 - else
   p Your cart is empty!

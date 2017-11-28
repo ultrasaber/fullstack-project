@@ -1,6 +1,6 @@
 h2 Edit address
 = link_to 'Go back', user_settings_path
-= form_for :address, url: update_user_address_path(params[:id]) do |form|
+= form_for(:address, url: update_user_address_path(params[:id]), html: { class: 'pure-form pure-form-stacked' }) do |form|
   #first_name
     = form.label :first_name
     = form.text_field :first_name
@@ -17,4 +17,4 @@ h2 Edit address
     = form.label :province
     = form.select :province_id, Province.all.collect { |p| [ p.name, p.id ] }
   #submit
-    = form.submit "Update address"
+    = form.submit "Update address", class: 'pure-button pure-button-primary'

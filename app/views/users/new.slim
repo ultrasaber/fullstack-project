@@ -1,5 +1,5 @@
 h2 Sign up for Vivace
-= form_for @user do |form|
+= form_for(@user, html: { class: 'pure-form pure-form-stacked' }) do |form|
   - if @user.errors.any?
     p The following error(s) occurred:
     ul
@@ -13,4 +13,4 @@ h2 Sign up for Vivace
     = form.label :password
     = form.password_field :password, require: true
   #submit
-    = form.submit "Sign up"
+    = form.submit "Sign up", class: 'pure-button pure-button-primary'

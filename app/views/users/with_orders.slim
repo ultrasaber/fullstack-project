@@ -2,7 +2,7 @@ h2 Order Manager
 
 p Displayed are all users with orders. Click on a user/order to be taken to the admin dashboard.
 
-table
+table class="pure-table pure-table-bordered"
   thead
     tr
       th User ID
@@ -33,6 +33,6 @@ table
               - order.line_items.each do |item|
                 li #{item.song.artist} - #{item.song.title}
           td
-            = link_to 'PAID', order_set_paid_path(order.id)
-            = link_to 'SHIPPED', order_set_shipped_path(order.id)
+            = link_to 'PAID', order_set_paid_path(order.id), class: 'status-button'
+            = link_to 'SHIPPED', order_set_shipped_path(order.id), class: 'status-button'
 

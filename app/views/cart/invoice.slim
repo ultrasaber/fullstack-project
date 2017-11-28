@@ -5,7 +5,7 @@ p #{@address.first_name} #{@address.last_name}
 p #{@address.address}
 p #{@address.city}, #{@address.province.name}
 
-table
+table class='pure-table pure-table-bordered'
   thead
     tr
       th Song
@@ -16,7 +16,7 @@ table
         td #{song.artist} - #{song.title}
         td #{currency_format(song.price)}
 
-table
+table class='pure-table pure-table-bordered'
   tbody
     tr
       th Subtotal
@@ -34,4 +34,4 @@ table
       th Grand Total
       td #{currency_format(@grand_total)}
 
-= link_to 'Continue and Place Order', place_order_path(@address.id)
+= link_to 'Place Order', place_order_path(@address.id), class: 'status-button'

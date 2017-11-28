@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Fira+Sans+Extra+Condensed');
+
+$dark-background: #262626;
+$dark-foreground: #cccccc;
+$less-dark-background: #404040;
+$light-background: #f2f2f2;
+$light-foreground: #393939;
+$accent: #ff9933;
+
+$header-font: 'Audiowide', sans-serif;
+$body-font: 'Fira Sans Extra Condensed', sans-serif;
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $light-background;
+}
+
+body, .pure-g, .pure-g>div {
+  min-height: 100%;
+}
+
+header {
+  background-color: $accent;
+  color: #000;
+  padding: 6px;
+
+  h1 {
+    display: inline-block;
+    margin: 0px 4px 0px 0px;
+    font-family: $header-font;
+    text-transform: uppercase;
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+
+  p {
+    display: inline;
+    font-family: $body-font;
+    font-style: italic;
+  }
+}
+
+nav {
+  color: $dark-foreground;
+  background-color: $dark-background;
+  font-family: $body-font;
+
+  form {
+    input#q {
+      width:50%;
+      height: 40px;
+      background-color: $less-dark-background;
+    }
+
+    select, input {
+      width:25%;
+      height: 40px;
+      border: 0px;
+      background-color: $less-dark-background;
+    }
+
+    input {
+      border: 0px;
+      padding: 0px;
+      height: 40px;
+      background-color: $less-dark-background;
+    }
+  }
+
+  a {
+    color: $dark-foreground;
+    text-decoration: none;
+  }
+}
+
+main {
+  color: $light-foreground;
+  background-color: $light-background;
+  font-family: $body-font;
+  min-height:100%;
+  
+  .song {
+    display: inline-block;
+    padding:20px;
+
+    &:hover {
+      background-color:#fff;
+    }
+
+    a {
+      color: $light-foreground;
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    margin-top: 0px;
+  }
+}
+
+.content-wrap {
+  padding: 20px;
+}
+
+.left-nav {
+  background-color: $dark-background;
+}
+
+.song-image {
+  font-family: $body-font;
+
+  .pure-img {
+    box-shadow: 7px 7px 5px #888888;
+    margin: 0px auto;
+  }
+}
+
+.song-description {
+  font-family: $body-font;
+
+  iframe {
+    display: block;
+    margin: 0px auto;
+  }
+}
+
+.price-tag {
+  display: inline;
+}
+
+.add-cart-button {
+  display: inline-block;
+  background-color: #139e31;
+  border-radius: 3px;
+  padding: 6px;
+  margin-left: 5px;
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.status-button {
+  display: inline-block;
+  background-color: #0078e7;
+  border-radius: 3px;
+  padding: 6px;
+  margin:2px;
+  color: #fff;
+  text-decoration: none;
+  width: 60px;
+  text-align: center;
+}
+
+.pure-menu-heading {
+  white-space: initial;
+}
+
+@media screen and (min-width: 48em) {
+  .left-nav {
+    position:fixed;
+  }
+  
+  .right-content {
+    margin-left:20%;
+  }
+
+  .album-cover {
+    box-shadow: 7px 7px 5px #888888;
+    width:300px;
+    height:300px;
+  }
+
+  .song-description {
+    padding-left: 20px;
+
+    iframe {
+      width: 70%;
+      height: 450px;
+    }
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .album-cover {
+    box-shadow: 7px 7px 5px #888888;
+    width:200px;
+    height:200px;
+  }
+
+  .song-description {
+    iframe {
+      width: 100%;
+    }
+  }
+
+  .song {
+    width: 240px;
+  }
+
+  .buy-me {
+    display: block;
+    margin: 0px auto;
+    width: 150px;
+  }
+}
