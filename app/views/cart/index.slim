@@ -21,11 +21,9 @@ h2 Your Cart
     p 
       = link_to 'Add an address now.', new_user_address_path
   - else
-    = form_tag("/checkout", method: "post", html: { class: 'pure-form-stacked' }) do
+    = form_tag("/checkout", method: "post", class: 'pure-form-stacked') do
       = label_tag(:address, "Select address: ")
       = select_tag(:address, options_from_collection_for_select(current_user.addresses, 'id', 'display_format'))
-      br
-      br
       = submit_tag("Proceed to checkout", class: 'pure-button pure-button-primary')
 - else
   p Your cart is empty!
