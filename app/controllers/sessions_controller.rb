@@ -7,11 +7,17 @@ class SessionsController < ApplicationController
   def create
     user = authenticate_session(session_params)
 
+    if !user
+      flash[:notice] = 'Failed to authenticate.'
+      redirect_to new_session_path and return
+    end
+
     if sign_in(user)
       flash[:notice] = 'Successfully logged in.'
       redirect_to root_path
     else
-      render :new
+      flash[:notice] = 'Failed to sign in.'
+      redirect_to new_session_path
     end
   end
 

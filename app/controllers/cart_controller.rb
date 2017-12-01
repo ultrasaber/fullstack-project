@@ -32,7 +32,7 @@ class CartController < ApplicationController
     @new_order.status = 'NEW'
 
     songs = Song.find(session[:shopping_cart]) unless session[:shopping_cart] == nil
-    redirect_to show_cart_path if songs.count == 0
+    redirect_to show_cart_path if songs.count == 0 and return
 
     songs.each do |song|
       new_line_item = @new_order.line_items.build
@@ -52,7 +52,7 @@ class CartController < ApplicationController
     confirm_address_ownership(@address.user.id)
 
     @songs = Song.find(session[:shopping_cart]) unless session[:shopping_cart] == nil
-    redirect_to show_cart_path if @songs.count == 0
+    redirect_to show_cart_path if @songs.count == 0 and return
 
     @subtotal = 0
 
