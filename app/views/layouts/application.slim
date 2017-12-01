@@ -58,4 +58,7 @@ html
       div class='right-content pure-u-md-4-5 pure-u-sm-1'
         .content-wrap
           main
+            - if flash[:notice] != nil
+              .notice
+                p #{flash[:notice]}
             = yield

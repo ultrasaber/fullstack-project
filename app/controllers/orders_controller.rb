@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
     order.status = 'PAID'
     order.save
 
+    flash[:notice] = 'Order updated.'
     redirect_to order_manager_path
   end
 
@@ -16,6 +17,7 @@ class OrdersController < ApplicationController
     order.status = 'SHIPPED'
     order.save
 
+    flash[:notice] = 'Order updated.'
     redirect_to order_manager_path
   end
 end

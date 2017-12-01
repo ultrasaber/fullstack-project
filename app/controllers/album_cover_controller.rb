@@ -10,6 +10,7 @@ class AlbumCoverController < ApplicationController
     @song.album_cover = params[:song][:album_cover]
     @song.save
 
+    flash[:notice] = 'Cover updated.'
     redirect_to edit_album_cover_path(@song.id)
   end
 
@@ -18,6 +19,7 @@ class AlbumCoverController < ApplicationController
     @song.album_cover = nil
     @song.save
 
+    flash[:notice] = 'Cover removed.'
     redirect_to edit_album_cover_path(@song.id)
   end
 end

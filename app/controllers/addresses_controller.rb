@@ -20,6 +20,7 @@ class AddressesController < ApplicationController
     new_address.city        = request.POST[:address][:city]
     new_address.save
 
+    flash[:notice] = 'Address successfully created.'
     redirect_to user_settings_path
   end
 
@@ -34,6 +35,7 @@ class AddressesController < ApplicationController
     address.city        = request.POST[:address][:city]
     address.save
 
+    flash[:notice] = 'Address successfully updated.'
     redirect_to user_settings_path
   end
 
@@ -43,6 +45,7 @@ class AddressesController < ApplicationController
 
     address.destroy
 
+    flash[:notice] = 'Address successfully deleted.'
     redirect_to user_settings_path
   end
 end

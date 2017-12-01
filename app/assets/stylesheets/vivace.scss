@@ -6,6 +6,7 @@ $less-dark-background: #404040;
 $light-background: #f2f2f2;
 $light-foreground: #393939;
 $accent: #ff9933;
+$status: #0078e7;
 
 $header-font: 'Audiowide', sans-serif;
 $body-font: 'Fira Sans Extra Condensed', sans-serif;
@@ -153,7 +154,7 @@ main {
 
 .status-button {
   @extend .button-base;
-  background-color: #0078e7;
+  background-color: $status;
   margin:2px;
   color: #fff;
   text-decoration: none;
@@ -163,6 +164,19 @@ main {
 
 .pure-menu-heading {
   white-space: initial;
+}
+
+.notice {
+  background-color: $status;
+  padding: 4px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+
+  p {
+    color: #fff;
+    margin: 0px;
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 48em) {
@@ -211,5 +225,9 @@ main {
     display: block;
     margin: 0px auto;
     width: 150px;
+  }
+
+  .left-nav {
+    width:100%;
   }
 }

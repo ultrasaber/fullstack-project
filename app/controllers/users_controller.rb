@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 
     if @user.valid?
       sign_in(@user)
+
+      flash[:notice] = 'Account successfully created.'
       redirect_to root_path
     else
       render :new
